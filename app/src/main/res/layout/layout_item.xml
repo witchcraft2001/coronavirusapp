@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textCountryName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        tools:text="Test"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/textCountryNewConfirmed"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textCountryNewConfirmed"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintBottom_toBottomOf="@+id/textCountryName"
+        app:layout_constraintLeft_toRightOf="@id/textCountryName"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textCountryName"
+        tools:text="Test"
+        android:gravity="end" />
+
+    <TextView
+        android:id="@+id/textCountryTotal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/textCountryTotalDeaths"
+        app:layout_constraintTop_toBottomOf="@+id/textCountryName"
+        tools:text="Test"/>
+
+    <TextView
+        android:id="@+id/textCountryTotalDeaths"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_red_light"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintLeft_toRightOf="@id/textCountryTotal"
+        app:layout_constraintRight_toLeftOf="@id/textCountryTotalRecovered"
+        app:layout_constraintTop_toBottomOf="@+id/textCountryName"
+        tools:text="Test"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/textCountryTotalRecovered"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintLeft_toRightOf="@id/textCountryTotalDeaths"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textCountryName"
+        android:textColor="@android:color/holo_green_dark"
+        tools:text="Test"
+        android:gravity="end" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CoronavirusApiApp</string>
+    <string name="message_not_found">Not found</string>
+</resources>
