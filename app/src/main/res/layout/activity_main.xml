@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="ru.dmdev.coronavirusapiapp.MainViewModel" />
+            type="ru.dmdev.coronavirusapiapp.viewmodels.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
