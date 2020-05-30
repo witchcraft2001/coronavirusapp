@@ -7,9 +7,10 @@ import ru.dmdev.coronavirusapiapp.extensions.toModel
 import ru.dmdev.coronavirusapiapp.models.Country
 import ru.dmdev.coronavirusapiapp.repositories.exceptions.RepositoryDataNotFoundException
 import ru.dmdev.coronavirusapiapp.repositories.models.RepositoryResult
+import javax.inject.Inject
 
-class Covid19RepositoryImpl() : Covid19Repository {
-    private var apiService = CoronavirusApi.create()
+class Covid19RepositoryImpl @Inject constructor(private val apiService: CoronavirusApi) : Covid19Repository {
+
     override suspend fun getCovid19Statistics(): RepositoryResult<List<Country>> {
         return try {
             val response = withContext(Dispatchers.IO) {

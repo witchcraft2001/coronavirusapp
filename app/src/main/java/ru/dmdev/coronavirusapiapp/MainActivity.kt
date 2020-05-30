@@ -10,16 +10,21 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.dmdev.coronavirusapiapp.adapters.CountryListAdapter
 import ru.dmdev.coronavirusapiapp.databinding.ActivityMainBinding
 import ru.dmdev.coronavirusapiapp.models.Country
+import ru.dmdev.coronavirusapiapp.viewmodels.MainViewModel
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
     private lateinit var adapter: CountryListAdapter
     private lateinit var binding: ActivityMainBinding
 
-    private lateinit var viewModel : MainViewModel
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+    protected lateinit var viewModel : MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
+        (applicationContext as CoronaVirusApiApp).appComponent.inject(this)
+        viewModel = ViewModelProvider(this, viewModelFactory)[MainViewModel::class.java]
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         initRecyclerView(binding.rvItems)
         binding.lifecycleOwner = this
